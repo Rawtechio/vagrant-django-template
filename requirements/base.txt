@@ -1,0 +1,39 @@
+# Framework
+Django==1.8.4
+
+# Database
+psycopg2==2.6.1
+
+# Sys / Ops
+gunicorn==19.3.0
+Fabric==1.10.2
+django-secure==1.0.1
+whitenoise==2.0.4
+django-compressor==1.5
+
+# API
+django-rest-swagger==0.3.4
+djangorestframework==3.2.4
+
+# Images
+Pillow==2.9.0
+
+# Forms
+django-crispy-forms==1.5.2
+django-braces==1.8.1
+
+# Authentication
+django-allauth==0.23.0
+
+# Activity Streams
+django-activity-stream==0.6.0
+
+# Models & Fields
+django-model-utils==2.3.1
+
+# Unicode slugification
+unicode-slugify==0.1.3
+django-autoslug==1.8.0
+
+# Date / Time / Timezones
+pytz==2015.6

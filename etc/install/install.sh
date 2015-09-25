@@ -58,12 +58,12 @@ su - vagrant -c "mkdir -p /home/vagrant/.pip_download_cache"
 
 # Node.js, CoffeeScript and LESS
 if ! command -v npm; then
-    wget http://nodejs.org/dist/v0.10.0/node-v0.10.0.tar.gz
-    tar xzf node-v0.10.0.tar.gz
-    cd node-v0.10.0/
+    wget http://nodejs.org/dist/v4.1.1/node-v4.1.1.tar.gz
+    tar xzf node-v4.1.1.tar.gz
+    cd node-v4.1.1/
     ./configure && make && make install
     cd ..
-    rm -rf node-v0.10.0/ node-v0.10.0.tar.gz
+    rm -rf node-v4.1.1/ node-v4.1.1.tar.gz
 fi
 if ! command -v coffee; then
     npm install -g coffee-script
@@ -80,7 +80,7 @@ createdb -Upostgres $DB_NAME
 # virtualenv setup for project
 su - vagrant -c "/usr/local/bin/virtualenv $VIRTUALENV_DIR && \
     echo $PROJECT_DIR > $VIRTUALENV_DIR/.project && \
-    PIP_DOWNLOAD_CACHE=/home/vagrant/.pip_download_cache $VIRTUALENV_DIR/bin/pip install -r $PROJECT_DIR/requirements.txt"
+    PIP_DOWNLOAD_CACHE=/home/vagrant/.pip_download_cache $VIRTUALENV_DIR/bin/pip install -r $PROJECT_DIR/requirements/dev.txt"
 
 echo "workon $VIRTUALENV_NAME" >> /home/vagrant/.bashrc
 
